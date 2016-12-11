@@ -45,8 +45,8 @@ set ruler               " line and column number of the cursor position
 set wildmenu            " enhanced command completion
 set visualbell          " use visual bell instead of beeping
 set laststatus=2        " always show the status line
-"set listchars=tab:▷⋅,trail:·,eol:$
-"set listchars=tab:▷⋅,trail:·
+set listchars=tab:▷⋅,trail:·,eol:$
+set listchars=tab:▷⋅,trail:·
 set nolist
 
 " highlight spell errors
@@ -89,9 +89,9 @@ set ignorecase          " Do case insensitive matching
 set smartcase           " do not ignore if search pattern has CAPS
 
 " omni completion settings
-" set omnifunc=rubycomplete#Complete
-" let g:rubycomplete_buffer_loading = 1
-" let g:rubycomplete_classes_in_global = 1
+"set omnifunc=rubycomplete#Complete
+"let g:rubycomplete_buffer_loading = 1
+"let g:rubycomplete_classes_in_global = 1
 
 " directory settings
 call system('mkdir -vp ~/.backup/undo/ > /dev/null 2>&1')

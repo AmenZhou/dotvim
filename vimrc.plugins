@@ -109,6 +109,8 @@ call dein#add('guns/xterm-color-table.vim')
 
 call dein#add('Valloric/YouCompleteMe', {'build': './install.py --clang-completer --tern-completer'})
 
+" call dein#add('ternjs/tern_for_vim')
+
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_complete_in_comments = 1
@@ -275,7 +277,7 @@ call dein#add('tpope/vim-surround')
 
 " plugins/60-development/plugins/syntastic/files -------------------
 
-call dein#add('scrooloose/syntastic')
+"call dein#add('scrooloose/syntastic')
 
 " TBD: check those setgings with latest plugin version
 let g:syntastic_enable_signs=1
@@ -313,8 +315,12 @@ call dein#add('mmalecki/vim-node.js')
 " plugins/70-languages/plugins/javascript/plugins/coffeescript/files -------------------
 
 call dein#add('kchmck/vim-coffee-script')
-call dein#add('vitaly/vim-literate-coffeescript')
+call dein#add('jwhitley/vim-literate-coffeescript')
 call dein#add('mtscout6/vim-cjsx')
+syntax enable
+filetype plugin indent on
+" jsx in 'js' extension files
+let g:jsx_ext_required = 0
 
 " plugins/70-languages/plugins/json/files -------------------
 
@@ -390,6 +396,22 @@ call dein#add('chriskempson/tomorrow-theme', {'rtp': 'vim/'})
 call dein#add('tpope/vim-vividchalk')
 call dein#add('nanotech/jellybeans.vim')
 
+" vim syntastic
+call dein#add('vim-syntastic/syntastic')
+
+" lint jsx syntax
+let g:syntastic_javascript_checkers = ['eslint']
+
+" configuration for syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " plugins/99-final/plugins/10-local-configs/files -------------------
 
 if filereadable(expand("~/.vimrc.plugins"))
@@ -401,3 +423,6 @@ endif
 if has('gui_running')
   source ~/.vim/gvimrc.plugins
 end
+
+" phoenix vim
+call dein#add('avdgaag/vim-phoenix')
