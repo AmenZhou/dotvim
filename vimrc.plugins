@@ -198,7 +198,7 @@ nmap <leader>q :CtrlPQuickfix<cr>
 
 " plugins/50-fuzzy-tools/plugins/40-ag/files -------------------
 
-nmap <leader>k :Ag<space>
+nmap <leader>k :Ag --ignore=app.bundle.js<space>
 
 " plugins/50-fuzzy-tools/plugins/40-ag/vim-ag -------------------
 
