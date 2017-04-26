@@ -185,6 +185,7 @@ let g:ctrlp_map = ''
 
 let g:ctrlp_map = '<leader>,'
 let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_prompt_mappings = '<C-v>'
 
 nmap <leader>. :CtrlPClearCache<cr>:CtrlP<cr>
 
@@ -402,7 +403,7 @@ call dein#add('vim-syntastic/syntastic')
 " lint jsx syntax
 let g:syntastic_javascript_checkers = ['eslint']
 
-" configuration for syntastic
+ "configuration for syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -410,7 +411,28 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
+
+" phoenix vim
+call dein#add('avdgaag/vim-phoenix')
+
+" elixir vim
+call dein#add('elixir-lang/vim-elixir')
+
+" multi select and edit
+call dein#add('terryma/vim-multiple-cursors')
+
+" vim search, integrates with ag
+call dein#add('eugen0329/vim-esearch')
+
+" auto completion fast
+call dein#add('roxma/nvim-completion-manager')
+
+" fzf vim quick file search
+" Install fzf first by running brew install fzf
+call dein#add('junegunn/fzf.vim')
+
+call dein#add('/usr/local/opt/fzf')
 
 " plugins/99-final/plugins/10-local-configs/files -------------------
 
@@ -423,6 +445,3 @@ endif
 if has('gui_running')
   source ~/.vim/gvimrc.plugins
 end
-
-" phoenix vim
-call dein#add('avdgaag/vim-phoenix')
