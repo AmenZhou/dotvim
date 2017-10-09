@@ -45,9 +45,11 @@ set ruler               " line and column number of the cursor position
 set wildmenu            " enhanced command completion
 set visualbell          " use visual bell instead of beeping
 set laststatus=2        " always show the status line
+set list
 set listchars=tab:▷⋅,trail:·,eol:$
 set listchars=tab:▷⋅,trail:·
-set nolist
+set expandtab!
+"set nolist
 
 " highlight spell errors
 hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
@@ -105,7 +107,8 @@ set undodir=~/.backup/undo/,~/tmp,.
 
 " folding
 set foldcolumn=0        " columns for folding
-set foldmethod=syntax
+" set foldmethod=syntax it becomes very slow when I try to edit a large file
+set foldmethod=manual
 set foldlevel=9
 set nofoldenable        " dont fold by default "
 

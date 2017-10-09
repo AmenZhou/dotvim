@@ -329,7 +329,11 @@ call dein#add('elzr/vim-json')
 
 " plugins/70-languages/plugins/markdown/files -------------------
 
-call dein#add('tpope/vim-markdown')
+"call dein#add('tpope/vim-markdown')
+
+call dein#add('godlygeek/tabular')
+call dein#add('plasticboy/vim-markdown')
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 " plugins/70-languages/plugins/ruby/files -------------------
 
@@ -402,6 +406,7 @@ call dein#add('vim-syntastic/syntastic')
 
 " lint jsx syntax
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 
  "configuration for syntastic
 set statusline+=%#warningmsg#
